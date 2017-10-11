@@ -88,7 +88,7 @@ internal class Renderer {
             #if os(iOS)
                 let bounds = UIScreen.main.bounds
                 self.webView = WKWebView(frame: bounds, configuration: config)
-                if let window = UIApplication.shared.keyWindow {
+                if let window = UIApplication.shared().keyWindow {
                     self.webView.alpha = 0.01
                     window.insertSubview(self.webView, at: 0)
                 } else {
@@ -96,7 +96,7 @@ internal class Renderer {
                 }
             #elseif os(OSX)
                 self.webView = WKWebView(frame: CGRect.zero, configuration: config)
-                if let window = NSApplication.shared.keyWindow, let view = window.contentView {
+                if let window = NSApplication.shared().keyWindow, let view = window.contentView {
                     self.webView.frame = CGRect(origin: CGPoint.zero, size: view.frame.size)
                     self.webView.alphaValue = 0.01
                     view.addSubview(self.webView)
