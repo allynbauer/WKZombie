@@ -7,6 +7,6 @@ let package = Package(
       Target(name: "Example", dependencies:["WKZombie"])
   ],
   dependencies: [
-	   .Package(url: "https://github.com/mkoehnke/hpple.git", Version(0,2,2))
+	   .Package(url: "https://github.com/allynbauer/hpple.git", Version(1,0,0))
   ]
 )
